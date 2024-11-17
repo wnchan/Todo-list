@@ -1,0 +1,99 @@
+.task-details {
+  padding: 20px;
+  border: 1px solid #ccc; /* light border for definition */
+  border-radius: 5px;
+  margin: 10px;
+  background: #b9e0f4;
+}
+
+.task-details h2 {
+  margin-top: 0;
+  color: #096d3d; 
+}
+
+p {
+  margin: 10px 0; /* space above and below paragraphs */
+  font-size: 16px;
+}
+
+.task-details input {
+  margin-bottom: 10px;
+  padding: 10px; /* increased padding for comfort */
+  width: 100%; /* full width */
+  max-width: 400px; 
+  border: 1px solid #ccc; /* border for input */
+  border-radius: 5px; /* rounded edges */
+}
+
+.task-details button {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 10px 15px; /* increased padding */
+  background-color: #069299; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; /* rounded edges */
+  cursor: pointer; /* pointer on hover */
+}
+
+.task-details button:hover {
+  background-color: #037177; /* darker on hover */
+}
+
+.category-container {
+  display: flex;
+  align-items: center; /* center the icon and text vertically */
+}
+
+.category-icon {
+  width: 15px; 
+  height: 15px; 
+  margin-left: 10px; /* space between icon and text */
+}
+
+.priority-label {
+  font-weight: none;
+}
+
+.priority-high {
+  margin-left: 0;
+  color: #e02d2d;
+}
+
+.priority-medium {
+  margin-left: 0;
+  color: rgb(246, 168, 0);
+}
+
+.priority-low {
+  margin-left: 0;
+  color: rgb(234, 234, 0);
+}
+
+.comments-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.comment-item p {
+  padding-left: 10px;
+  flex-grow: 1; /* allow the comment text to take up available space */
+  min-width: 0; /* ensure the comment text does not overflow */
+  word-wrap: break-word; /* allow long words to break onto the next line */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* space buttons to opposite sides */
+  margin-top: 15px; /* add some space above the buttons */
+}

@@ -1,38 +1,203 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-image: url('./sky.jpg'); 
+  display: flex; 
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+/* app container */
 .App {
-  text-align: center;
+  width: 550px;
+  margin: 50px; /* margin between body and app container */
+  padding: 50px; /* margin between input, buttons with app container */
+  background: linear-gradient(150deg, rgb(156, 233, 245), rgb(189, 219, 223), rgb(121, 161, 248));
+  border-radius: 10px; /* round corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* title */
+h1 {
+  text-align: center; 
+  color: #096d3d; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack input elements vertically */
+  align-items: center; /* center inputs */
+  margin-bottom: 20px; /* space below whole input container */
+}
+
+/* input bar */
+input[type='text'] {
+  width: 100%; /* full width for input text */
+  padding: 10px; /* padding for the text input with container */
+  margin-bottom: 10px; /* space below the input container */
+  border: 1px solid #ccc; /* light border */
+  border-radius: 5px; /* rounded corners */
+  color: black;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* for input category, priority, date buttons */
+.top-controls {
+  display: flex; /* arrange buttons in a row */
+  gap: 10px; /* space between elements */
+  margin-bottom: 10px;
+}
+
+/* select priority dropdown */
+select {
+  padding: 10px; /* padding for the button */
+  margin: 5px; /* space between buttons */
+  border: 1px solid #ccc; 
+  border-radius: 5px; /* rounded corners */
+  background-color: #069299; 
+  color: white; 
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  cursor: pointer; /* change cursor on hover */
+}
+
+select:hover {
+  background-color: #037177; /* darker button color on hover */
+}
+
+button {
+  padding: 10px; /* padding for buttons */
+  margin: 5px; /* space between buttons */
+  border: 1px solid #ccc; 
+  border-radius: 5px; /* rounded corners */
+  background-color: #069299;  
+  color: white; 
+  cursor: pointer; /* pointer on hover */
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+button:hover {
+  background-color: #037177; /* darker button color on hover */
+}
+
+.date-picker {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px; /* space between dropdown and date input */
+  color: white; 
+  background-color: #007bff;  
+}
+
+/* Todo Items */
+ul { /* unordered list */
+  padding: 0; /* remove default padding */
+  margin: 0; /* remove extra margin */
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: flex-start; /* align to the start */
+}
+
+.todo-item {
+  display: flex;
+  flex-wrap: wrap; /* allow items to wrap to next line */
+  align-items: center; /* center align items in todo */
+  justify-content: flex-start; /* align items to the start */
+  padding-top: 5px; 
+}
+
+.tick-button {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 30px; /* fixed width for the box */
+  height: 30px; /* fixed height for the box */
+  border: 2px solid #a7f5f5; /* border color */
+  border-radius: 5px; /* rounded corners */
+  cursor: pointer; /* change cursor on hover */
+  margin-right: 10px; /* space between the box and the icon */
+  background: rgb(227, 248, 246);
+}
+
+.due-date {
+  margin-left: 10px; /* space before the due date */
+  margin-right: 10px; 
+  font-style: italic; /* italicize the due date */
+}
+
+.dropdown-btn {
+  display: flex;
+  align-items: center; /* center vertically */
+  padding: 10px; 
+  border: 1px solid #ccc; /* border for the button */
+  border-radius: 5px; /* rounded corners */
+  background-color: #069299;  
+  color: white; 
+  cursor: pointer; /* pointer on hover */
+  margin: 5px; /* space between buttons */
+}
+
+.dropdown-content {
+  display: none; /* hidden by default */
+  position: absolute; /* absolute positioning */
+  border: 1px solid #ccc; /* border for the button */
+  border-radius: 5px; /* rounded corners */
+  background-color: #08abb4; 
+  color: white; 
+  min-width: 160px; /* minimum width for dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* shadow for dropdown */
+  z-index: 1; /* ensure it appears above other elements */
+}
+
+.dropdown-content .dropdown-item,
+.dropdown-content .category-filter-item {
+  padding: 12px; /* padding for items */
+  cursor: pointer; /* pointer on hover */
+}
+
+.dropdown-content .category-filter-item {
+  display: flex; 
+  align-items: center; 
+  gap: 5px; /* space between icon and text */
+}
+
+.dropdown-content .dropdown-item:hover,
+.dropdown-content .category-filter-item:hover {
+  background-color: #037177;  /* background color on hover */
+}
+
+.custom-dropdown:hover .dropdown-content,
+.sort-dropdown:hover .dropdown-content,
+.category-filter-dropdown:hover .dropdown-content {
+  display: block; /* show dropdown on hover */
+}
+
+/* category filters */
+.filters {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.category-icon {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 5px; /* space between icon and text */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.priority-high {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #e02d2d;;
+}
+
+.priority-medium {
+  margin-left: 10px;
+  font-weight: bold;
+  color: rgb(246, 168, 0);
+}
+
+.priority-low {
+  margin-left: 10px;
+  font-weight: bold;
+  color: rgb(234, 234, 0);
 }

@@ -1,0 +1,75 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #096d3d; 
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: flex-start; /* align controls to the left */
+  gap: 5px; /* space between controls */
+  margin-bottom: 10px; /* space below the controls */
+}
+
+.filter-controls .dropdown-btn {
+  display: flex; 
+  align-items: center; /* center vertically */
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; /* rounded corners */
+  background-color: #069299;  
+  color: white; 
+  cursor: pointer; /* pointer on hover */
+  margin: 5px; /* space between buttons */
+}
+
+.filter-controls .dropdown-btn:hover {
+  background-color: #037177; /* darker button color on hover */
+}
+
+.dropdown-content {
+  display: none; /* hide by default */
+  background-color: #08abb4; /* background for dropdown */
+  color: white; 
+}
+
+.filter-controls .dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+  display: block; /* show on hover */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.category-filter-item {
+  display: flex; /* flexbox for item alignment */
+  align-items: center; /* center vertically */
+}
+
+.category-icon {
+  width: 20px; 
+  height: 20px; 
+}
+
+/* Todo Items */
+ul {
+  list-style-type: none;
+  padding: 0; /* remove default padding */
+  margin: 0; /* remove extra margin */
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: stretch; /* align items to fill space */
+}
+
+li {
+  border: 1px solid #ddd; /* light border for definition */
+  margin-bottom: 10px; /*space between tasks */
+  border-radius: 5px; /* rounded corners */
+  background-color: #c4eeed; 
+  cursor: pointer; 
+}
+
+li:hover {
+  background-color: #afe7ee; /* change background color on hover */
+  transform: scale(1.02); /* slightly enlarge the item on hover */
+}
